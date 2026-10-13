@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fretlab"
+version = "0.1.0"
+description = "Virtual luthier fretboard modeler: neck relief, fret/string geometry, and buzz-risk analysis."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "FretLab contributors" }]
+keywords = ["luthier", "guitar-setup", "fretboard", "neck-relief", "truss-rod", "physics"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Manufacturing",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Multimedia :: Graphics :: Visualization",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pydantic>=2.5",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "click>=8.1",
+    "rich>=13.0",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-cov", "ruff"]
+web = ["fastapi>=0.110", "uvicorn", "jinja2"]
+three-d = ["plotly>=5.0"]
+
+[project.scripts]
+fretlab = "fretlab.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["fretlab*"]
+
+[tool.setuptools.package-data]
+fretlab = ["presets/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

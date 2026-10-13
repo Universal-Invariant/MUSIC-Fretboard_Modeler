@@ -1,0 +1,54 @@
+preset:
+  title: "Cello (fretless, ~700 mm vibrating length)"
+  description: >
+    Fretless; long ebony board with a slight lengthwise hollow is normal.
+    Endpin-side geometry dominated by neck/bridge rather than truss.
+
+instrument:
+  name: "Cello"
+  family: cello
+  scale_length_mm: 700.0
+  num_frets: 0
+  board_angle_deg: 0.0
+  neck_fall_mm: 0.0
+
+fretboard:
+  length_mm: 728.0
+  width_at_nut_mm: 26.0
+  width_at_last_fret_mm: 42.0
+  thickness_mm: 9.0
+  material: ebony
+  bow:
+    model: cubic
+    max_relief_mm: 0.15
+  fret_heights:
+    model: uniform
+    height_mm: 0.0
+
+truss:
+  state_turns: 0.0
+  truss_stiffness: -0.10   # mm of relief per full turn (neg = tighten reduces relief)
+  string_load_coefficient: 0.0   # bow model already describes the neck at tune
+  solve_mode: manual
+
+strings:
+  - {name: A4, gauge_mm: 1.10, tension_N: 130.0, lateral_mm: -8.0}
+  - {name: D3, gauge_mm: 1.65, tension_N: 125.0, lateral_mm: -2.7}
+  - {name: G2, gauge_mm: 2.25, tension_N: 120.0, lateral_mm: 2.7}
+  - {name: C2, gauge_mm: 2.85, tension_N: 115.0, lateral_mm: 8.0}
+
+contact_points:
+  nut_height_mm: 4.0
+  nut_position_mm: 0.0
+  saddle_height_mm: 0.0      # bridge sets string line
+  saddle_position_mm: 700.0
+
+excitation:
+  model: fundamental
+  pluck_amplitude_mm: 2.5
+  pluck_position_ratio: 0.2
+  harmonics: 8
+
+buzz:
+  warn_clearance_mm: 0.50
+  buzz_clearance_mm: 0.25
