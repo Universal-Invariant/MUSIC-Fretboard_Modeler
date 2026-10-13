@@ -1,0 +1,55 @@
+preset:
+  title: "Stratocaster-style electric (25.5\")"
+  description: "648 mm scale, 22 frets, 9-42 nickel wound set, light relief."
+
+instrument:
+  name: "Strat-style electric"
+  family: guitar
+  scale_length_mm: 648.0
+  num_frets: 22
+  board_angle_deg: 0.0
+  neck_fall_mm: 0.8
+
+fretboard:
+  length_mm: 700.0
+  width_at_nut_mm: 42.8
+  width_at_last_fret_mm: 56.0
+  thickness_mm: 6.0
+  material: rosewood
+  fret_positions: rule_of_17
+  bow:
+    model: cubic
+    max_relief_mm: 0.25
+  fret_heights:
+    model: uniform
+    height_mm: 1.15
+
+truss:
+  state_turns: 0.0
+  truss_stiffness: -0.10   # mm of relief per full turn (neg = tighten reduces relief)
+  string_load_coefficient: 0.0   # bow model already describes the neck at tune
+  solve_mode: manual
+
+strings:
+  - {name: e1, gauge_mm: 0.279, tension_N: 61.6, lateral_mm: -21.4, note: ".011 plain"}
+  - {name: B2, gauge_mm: 0.42,  tension_N: 67.2, lateral_mm: -12.8, note: ".016"}
+  - {name: G3, gauge_mm: 0.584, tension_N: 65.4, lateral_mm: -4.3,  note: ".024 wound"}
+  - {name: D4, gauge_mm: 0.813, tension_N: 68.5, lateral_mm: 4.3,   note: ".032"}
+  - {name: A5, gauge_mm: 1.016, tension_N: 68.5, lateral_mm: 12.8,  note: ".040"}
+  - {name: E6, gauge_mm: 1.219, tension_N: 65.0, lateral_mm: 21.4,  note: ".048"}
+
+contact_points:
+  nut_height_mm: 1.75   # centerline above the BOARD SURFACE (crown 1.15 ⇒ ~0.35 mm over the first wire)
+  nut_position_mm: 0.0
+  saddle_height_mm: 3.65  # centerline above board at saddle ⇒ ≈1.6 mm action @12th
+  saddle_position_mm: 657.5
+
+excitation:
+  model: pluck_spectrum
+  pluck_amplitude_mm: 1.2
+  pluck_position_ratio: 0.18
+  harmonics: 12
+
+buzz:
+  warn_clearance_mm: 0.25
+  buzz_clearance_mm: 0.12

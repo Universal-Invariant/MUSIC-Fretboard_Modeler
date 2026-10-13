@@ -1,0 +1,52 @@
+preset:
+  title: "Precision bass-style (34\")"
+  description: "864 mm scale, 20 frets, P-Bass windings, more relief than guitar."
+
+instrument:
+  name: "P-bass style"
+  family: bass
+  scale_length_mm: 864.0
+  num_frets: 20
+  board_angle_deg: 0.0
+  neck_fall_mm: 1.2
+
+fretboard:
+  length_mm: 940.0
+  width_at_nut_mm: 42.0
+  width_at_last_fret_mm: 61.0
+  thickness_mm: 7.0
+  material: maple
+  bow:
+    model: cubic
+    max_relief_mm: 0.45     # basses like a bit more relief
+  fret_heights:
+    model: uniform
+    height_mm: 1.30
+
+truss:
+  state_turns: 0.0
+  truss_stiffness: -0.10   # mm of relief per full turn (neg = tighten reduces relief)
+  string_load_coefficient: 0.0   # bow model already describes the neck at tune
+  solve_mode: manual
+
+strings:
+  - {name: G1, gauge_mm: 0.85,  tension_N: 110.0, lateral_mm: -15.75}
+  - {name: D2, gauge_mm: 1.10,  tension_N: 115.0, lateral_mm: -5.25}
+  - {name: A3, gauge_mm: 1.55,  tension_N: 118.0, lateral_mm: 5.25}
+  - {name: E4, gauge_mm: 2.05,  tension_N: 112.0, lateral_mm: 15.75}
+
+contact_points:
+  nut_height_mm: 2.40   # ≈0.65 mm over the first crown
+  nut_position_mm: 0.0
+  saddle_height_mm: 4.90  # ⇒ ≈2.2 mm action @12th
+  saddle_position_mm: 877.0
+
+excitation:
+  model: pluck_spectrum
+  pluck_amplitude_mm: 1.8      # fat low strings swing wider
+  pluck_position_ratio: 0.15
+  harmonics: 10
+
+buzz:
+  warn_clearance_mm: 0.35
+  buzz_clearance_mm: 0.18

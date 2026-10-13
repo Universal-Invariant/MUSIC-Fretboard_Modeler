@@ -1,0 +1,57 @@
+preset:
+  title: "Dreadnought acoustic (25.4\")"
+  description: >
+    Steel-string flat-top: neck pull from string tension matters a lot; saddle
+    compensation pushes the anchor past scale length. Board angle here is the
+    fingerboard's angle relative to the string-plane reference at rest.
+
+instrument:
+  name: "Dreadnought acoustic"
+  family: guitar
+  scale_length_mm: 645.0
+  num_frets: 20
+  board_angle_deg: 0.35     # slight board rise toward body (overstand geometry)
+  neck_fall_mm: 1.0
+
+fretboard:
+  length_mm: 700.0
+  width_at_nut_mm: 44.5
+  width_at_last_fret_mm: 55.0
+  thickness_mm: 5.0
+  material: ebony
+  bow:
+    model: cubic
+    max_relief_mm: 0.30
+  fret_heights:
+    model: uniform
+    height_mm: 1.00         # small crown on acoustics
+
+truss:
+  state_turns: 0.0
+  truss_stiffness: -0.10   # mm of relief per full turn (neg = tighten reduces relief)
+  string_load_coefficient: 0.0   # bow model already describes the neck at tune
+  solve_mode: manual
+
+strings:
+  - {name: e1, gauge_mm: 0.30, tension_N: 78.0, lateral_mm: -20.0}
+  - {name: B2, gauge_mm: 0.46, tension_N: 84.0, lateral_mm: -12.0}
+  - {name: G3, gauge_mm: 0.90, tension_N: 82.0, lateral_mm: -4.0}
+  - {name: D4, gauge_mm: 0.65, tension_N: 80.0, lateral_mm: 4.0}
+  - {name: A5, gauge_mm: 0.85, tension_N: 82.0, lateral_mm: 12.0}
+  - {name: E6, gauge_mm: 1.10, tension_N: 80.0, lateral_mm: 20.0}
+
+contact_points:
+  nut_height_mm: 1.60   # ≈0.45 mm over the first crown (1.00-wire board)
+  nut_position_mm: 0.0
+  saddle_height_mm: 4.5     # string centerline above board line ⇒ ≈2.0 mm action @12th
+  saddle_position_mm: 658.0 # scale + ~13 mm total compensation
+
+excitation:
+  model: pluck_spectrum
+  pluck_amplitude_mm: 1.6
+  pluck_position_ratio: 0.15
+  harmonics: 12
+
+buzz:
+  warn_clearance_mm: 0.25
+  buzz_clearance_mm: 0.12

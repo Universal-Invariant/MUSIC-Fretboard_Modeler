@@ -1,0 +1,54 @@
+preset:
+  title: "Les Paul-style electric (24.75\")"
+  description: "628 mm scale, 22 medium-jumbo frets, 10-46 set."
+
+instrument:
+  name: "Les Paul-style electric"
+  family: guitar
+  scale_length_mm: 628.0
+  num_frets: 22
+  board_angle_deg: 0.0
+  neck_fall_mm: 0.0
+
+fretboard:
+  length_mm: 690.0
+  width_at_nut_mm: 43.0
+  width_at_last_fret_mm: 52.5
+  thickness_mm: 8.0
+  material: rosewood
+  bow:
+    model: cubic
+    max_relief_mm: 0.20
+  fret_heights:
+    model: uniform
+    height_mm: 1.30        # medium-jumbo
+
+truss:
+  state_turns: 0.0
+  truss_stiffness: -0.10   # mm of relief per full turn (neg = tighten reduces relief)
+  string_load_coefficient: 0.0   # bow model already describes the neck at tune
+  solve_mode: manual
+
+strings:
+  - {name: e1, gauge_mm: 0.33,  tension_N: 68.0, lateral_mm: -17.0}
+  - {name: B2, gauge_mm: 0.46,  tension_N: 70.0, lateral_mm: -10.2}
+  - {name: G3, gauge_mm: 0.635, tension_N: 68.0, lateral_mm: -3.4}
+  - {name: D4, gauge_mm: 0.90,  tension_N: 72.0, lateral_mm: 3.4}
+  - {name: A5, gauge_mm: 1.14,  tension_N: 74.0, lateral_mm: 10.2}
+  - {name: E6, gauge_mm: 1.37,  tension_N: 70.0, lateral_mm: 17.0}
+
+contact_points:
+  nut_height_mm: 1.90   # ≈0.35 mm over the first crown (1.30-wire board)
+  nut_position_mm: 0.0
+  saddle_height_mm: 3.55  # ⇒ ≈1.5 mm action @12th
+  saddle_position_mm: 637.0
+
+excitation:
+  model: pluck_spectrum
+  pluck_amplitude_mm: 1.2
+  pluck_position_ratio: 0.20
+  harmonics: 12
+
+buzz:
+  warn_clearance_mm: 0.25
+  buzz_clearance_mm: 0.12

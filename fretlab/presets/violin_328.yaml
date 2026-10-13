@@ -1,0 +1,56 @@
+preset:
+  title: "Violin (fretless, 328 mm vibrating length)"
+  description: >
+    Fretless fingerboard: no crowns — the board surface is the obstacle.
+    No truss rod; 'bow' here models the slight longitudinal arch/plan of the
+    ebony board (ebony boards are typically dead flat or with a hair of lengthwise
+    hollow under the E-string side).
+
+instrument:
+  name: "Violin"
+  family: violin
+  scale_length_mm: 328.0     # nut to bridge contact
+  num_frets: 0
+  board_angle_deg: 0.0
+  neck_fall_mm: 0.0
+
+fretboard:
+  length_mm: 355.0           # overstand board length incl. heel reach
+  width_at_nut_mm: 16.2
+  width_at_last_fret_mm: 26.0
+  thickness_mm: 5.5
+  material: ebony
+  bow:
+    model: cubic
+    max_relief_mm: 0.05      # essentially flat; tiny lengthwise hollow ok
+  fret_heights:
+    model: uniform
+    height_mm: 0.0           # fretless!
+
+truss:
+  state_turns: 0.0
+  truss_stiffness: -0.10   # mm of relief per full turn (neg = tighten reduces relief)
+  string_load_coefficient: 0.0   # bow model already describes the neck at tune
+  solve_mode: manual
+
+strings:
+  - {name: E, gauge_mm: 0.56, tension_N: 76.0, lateral_mm: -6.1, note: "steel core"}
+  - {name: A, gauge_mm: 1.00, tension_N: 65.0, lateral_mm: -2.0}
+  - {name: D, gauge_mm: 1.35, tension_N: 62.0, lateral_mm: 2.0}
+  - {name: G, gauge_mm: 1.75, tension_N: 58.0, lateral_mm: 6.1}
+
+contact_points:
+  nut_height_mm: 2.0         # string above board at nut (violin nut clearance ~4mm to G)
+  nut_position_mm: 0.0
+  saddle_height_mm: 0.0      # bridge controls height; model line at bridge top
+  saddle_position_mm: 328.0
+
+excitation:
+  model: fundamental         # bowed strings: Helmholtz motion, small excursion
+  pluck_amplitude_mm: 0.9
+  pluck_position_ratio: 0.2
+  harmonics: 8
+
+buzz:
+  warn_clearance_mm: 0.30
+  buzz_clearance_mm: 0.15
